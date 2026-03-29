@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Skoda Rapid — обзор, характеристики, плюсы и минусы</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+            background: #f4f6fa;
+            color: #1e293b;
+            line-height: 1.5;
+            padding: 2rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            padding: 2rem 2.5rem;
+        }
+
+        /* Шапка */
+        .header {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #1e3c72, #2b4c7c);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.3rem;
+        }
+
+        .subhead {
+            color: #475569;
+            font-size: 1.1rem;
+            margin-top: 0.25rem;
+        }
+
+        /* Основной текст */
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+            color: #1e293b;
+        }
+
+        h2 {
+            font-size: 1.7rem;
+            font-weight: 600;
+            margin: 1.6rem 0 0.8rem 0;
+            padding-left: 0.5rem;
+            border-left: 5px solid #2b4c7c;
+            color: #0f172a;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.3rem 0 0.6rem 0;
+            color: #1e3a5f;
+        }
+
+        /* Таблица характеристик */
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #f8fafc;
+            border-radius: 1rem;
+            overflow: hidden;
+            margin: 1rem 0 1.5rem 0;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .specs-table tr {
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .specs-table td {
+            padding: 0.9rem 1.2rem;
+            vertical-align: top;
+        }
+
+        .specs-table td:first-child {
+            font-weight: 700;
+            width: 35%;
+            background: #f1f5f9;
+            color: #0c4a6e;
+        }
+
+        /* Блоки преимуществ и минусов */
+        .pros-cons {
+            display: flex;
+            gap: 2rem;
+            margin: 1.5rem 0 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .pros, .cons {
+            flex: 1;
+            background: #f8fafc;
+            border-radius: 1.2rem;
+            padding: 1.3rem 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .pros h3, .cons h3 {
+            margin-top: 0;
+            border-left: none;
+            padding-left: 0;
+        }
+
+        .pros h3 { color: #15803d; }
+        .cons h3 { color: #b91c1c; }
+
+        .pros ul, .cons ul {
+            padding-left: 1.4rem;
+            margin-top: 0.5rem;
+        }
+
+        .pros li, .cons li {
+            margin: 0.6rem 0;
+            line-height: 1.4;
+        }
+
+        /* Блок с проблемами */
+        .problems-block {
+            background: #fff7ed;
+            border-left: 5px solid #ea580c;
+            padding: 1rem 1.5rem;
+            border-radius: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        /* Двигатели и КПП */
+        .engine-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 1rem 0;
+        }
+
+        .engine-card {
+            background: #f1f5f9;
+            border-radius: 1rem;
+            padding: 0.9rem 1.3rem;
+            flex: 1 1 200px;
+            transition: 0.1s;
+            border: 1px solid #e2e8f0;
+        }
+
+        .engine-card strong {
+            font-size: 1.1rem;
+            color: #0f172a;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Стили для YouTube блока */
+        .youtube-block {
+            background: #fef9e3;
+            border-radius: 1rem;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            border: 1px solid #fde047;
+        }
+
+        .youtube-icon {
+            font-size: 1.8rem;
+        }
+
+        /* footer */
+        .footer-note {
+            margin-top: 2.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #cbd5e1;
+            font-size: 0.8rem;
+            color: #475569;
+            text-align: center;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 1.2rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .pros-cons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Škoda Rapid</h1>
+        <div class="subhead">Популярный бюджетный лифтбек (между B и C классами) — ценимый за практичность, огромный багажник и надежные турбодвигатели VW Group.</div>
+    </div>
+
+    <!-- Основное описание -->
+    <p><strong>Škoda Rapid</strong> — это автомобиль, который завоевал любовь в России и Европе благодаря разумному сочетанию цены, вместительности и современных технологий. Выпускался в двух поколениях (до 2022/2023 гг.), известен жестковатой подвеской, отличной управляемостью и просторным салоном, но скромной базовой комплектацией.</p>
+
+    <!-- Основные характеристики и версии -->
+    <h2>📐 Основные характеристики и версии</h2>
+    <p><strong>Кузов:</strong> Лифтбек (внешне седан, но багажник открывается со стеклом).</p>
+    
+    <h3>Двигатели</h3>
+    <div class="engine-list">
+        <div class="engine-card"><strong>1.6 MPI (атмосферный)</strong><br>90 или 110 л.с. — надежный, «ест» масло редко, но слабоват для трассы.</div>
+        <div class="engine-card"><strong>1.4 TSI (турбо)</strong><br>125 л.с. — динамичный, экономичный, но дороже в обслуживании.</div>
+    </div>
+
+    <h3>Трансмиссии</h3>
+    <div class="engine-list">
+        <div class="engine-card"><strong>МКПП</strong><br>5 или 6 ступеней</div>
+        <div class="engine-card"><strong>АКПП Aisin</strong><br>6 ступеней (для 1.6 MPI)</div>
+        <div class="engine-card"><strong>DSG (робот)</strong><br>7 ступеней (для 1.4 TSI)</div>
+    </div>
+
+    <h3>Габариты и клиренс</h3>
+    <p>📏 Длина ≈ 4485 мм, ширина ≈ 1706 мм, колёсная база — 2602 мм. <strong>Клиренс</strong> порядка 150–170 мм (в зависимости от исполнения и рынка).</p>
+
+    <!-- Таблица ключевых характеристик -->
+    <h2>⚙️ Основные характеристики</h2>
+    <table class="specs-table">
+        <tr><td>Объём багажника</td><td>530 литров (при сложенных сиденьях — 1460 литров)</td></tr>
+        <tr><td>Двигатели</td><td>1.6 MPI (90/110 л.с.) и 1.4 TSI (125 л.с.)</td></tr>
+        <tr><td>Коробки передач</td><td>МКПП, 6-ступ. АКПП Aisin, 7-ступ. DSG</td></tr>
+        <tr><td>Привод</td><td>Передний</td></tr>
+        <tr><td>Подвеска</td><td>Спереди — McPherson, сзади — полузависимая балка (жестковатая, но энергоёмкая)</td></tr>
+        <tr><td>Тип кузова</td><td>Лифтбек (5‑дверный)</td></tr>
+    </table>
+
+    <!-- Преимущества и слабые места -->
+    <h2>✅ Плюсы и минусы Škoda Rapid</h2>
+    <div class="pros-cons">
+        <div class="pros">
+            <h3>➕ Преимущества</h3>
+            <ul>
+                <li>🏆 Вместительный багажник (530/1460 л) — лидер в классе.</li>
+                <li>📦 Отличная эргономика, продуманные мелочи Simply Clever (скребок, крючки, органайзеры).</li>
+                <li>🔧 Надежность моторов при своевременном обслуживании.</li>
+                <li>⛽ Экономичность — особенно турбомотор 1.4 TSI на трассе.</li>
+                <li>🚗 Просторный салон, сзади комфортно даже рослым пассажирам.</li>
+            </ul>
+        </div>
+        <div class="cons">
+            <h3>➖ Минусы</h3>
+            <ul>
+                <li>💰 Высокая цена на вторичном рынке (высокая ликвидность, Rapid держит цену).</li>
+                <li>🛞 Жестковатая подвеска — на неровностях ощущается дискомфорт.</li>
+                <li>🧴 Простой салон: жесткий пластик, минимализм в базовых версиях.</li>
+                <li>🔊 Плохая шумоизоляция — особенно заметно на высоких скоростях.</li>
+                <li>📉 Скромная базовая комплектация (нужно доплачивать за опции).</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Проблемы на высоких пробегах -->
+    <h2>⚠️ Проблемы на высоких пробегах (100 000+ км)</h2>
+    <div class="problems-block">
+        <p>🔧 <strong>Для мотора 1.4 TSI:</strong> возможны вопросы по турбине и цепи ГРМ (растяжение цепи). Требуется качественное масло и своевременная диагностика.</p>
+        <p>🛢️ <strong>Для 1.6 MPI:</strong> в редких случаях может появиться масложор (зависит от обслуживания), но в целом атмосферник считается очень живучим.</p>
+        <p>⚙️ <strong>Коробка DSG (сухой тип DQ200):</strong> на пробегах от 100 тыс. км могут наблюдаться рывки, проблемы с мехатроником. Рекомендуется проверять при покупке.</p>
+        <p>🧲 <strong>На вторичном рынке:</strong> стоит искать машины с честной историей, избегать экземпляров с перегретым DSG и непроверенным турбомотором.</p>
+    </div>
+
+    <!-- Вторичный рынок + советы -->
+    <h2>📌 Вторичный рынок и советы по выбору</h2>
+    <p>Rapid очень ликвиден на вторичке, но и цены на него выше среднего. Лучше всего рассматривать версии <strong>после рестайлинга</strong> (с 2017 года) — улучшенная шумоизоляция, более качественные материалы. При выборе с мотором 1.4 TSI обязательно проверяйте состояние DSG и турбину. Атмосферный 1.6 MPI в паре с классической АКПП Aisin считается самым неприхотливым вариантом для спокойной езды.</p>
+    
+    <div class="youtube-block">
+        <div class="youtube-icon">▶️📺</div>
+        <div><strong>Больше обзоров и тест-драйвов:</strong> на YouTube вы найдёте сотни видео с реальными отзывами владельцев, сравнениями до/после и ремонтом типовых неисправностей Skoda Rapid.</div>
+    </div>
+
+    <!-- Компактный блок с итоговой таблицей "Плюсы / Минусы" в цифровом стиле -->
+    <h2>🔍 Резюме</h2>
+    <p>Škoda Rapid — отличный выбор для тех, кому нужен практичный, вместительный автомобиль на каждый день с хорошей управляемостью и предсказуемыми расходами. При всех минусах (жесткая подвеска, шумка) это один из лучших лифтбеков в бюджетном сегменте, особенно если вы готовы тщательно подойти к выбору на вторичке.</p>
+    
+    <div class="footer-note">
+        🚗 Информация подготовлена на основе реальных отзывов владельцев, технических характеристик и обзоров. Актуально для рынка РФ и СНГ.
+    </div>
+</div>
+</body>
+</html>555555
