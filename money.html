@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Деньги — всё о функциях, видах и финансовой грамотности</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Inter', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #0b2b26 0%, #1a4d3e 100%);
+            color: #e8f0ea;
+            line-height: 1.5;
+            padding: 2rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(15, 35, 30, 0.85);
+            backdrop-filter: blur(2px);
+            border-radius: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            padding: 2rem 2.5rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* Шапка */
+        .header {
+            border-bottom: 2px solid rgba(212, 175, 55, 0.5);
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #f9e45b, #d4af37);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .subhead {
+            color: #b8d9d0;
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        /* Основной текст */
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+            color: #e2ede8;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 1.8rem 0 1rem 0;
+            padding-left: 0.75rem;
+            border-left: 5px solid #d4af37;
+            color: #f5e7a7;
+        }
+
+        h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin: 1.3rem 0 0.6rem 0;
+            color: #ecd669;
+        }
+
+        /* Карточки функций */
+        .functions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+
+        .func-card {
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: 1.2rem;
+            padding: 1.2rem;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .func-card:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .func-icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .func-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #f5e7a7;
+        }
+
+        /* Таблица видов денег */
+        .money-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: 1rem;
+            overflow: hidden;
+            margin: 1rem 0 1.5rem 0;
+        }
+
+        .money-table tr {
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .money-table td {
+            padding: 0.9rem 1.2rem;
+            vertical-align: top;
+        }
+
+        .money-table td:first-child {
+            font-weight: 700;
+            width: 30%;
+            background: rgba(212, 175, 55, 0.15);
+            color: #ecd669;
+        }
+
+        /* Денежная система */
+        .policy-block {
+            background: rgba(0, 0, 0, 0.4);
+            border-left: 5px solid #d4af37;
+            padding: 1rem 1.5rem;
+            border-radius: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        /* Финансовая грамотность — советы */
+        .tips-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .tip-card {
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: 1rem;
+            padding: 1rem 1.2rem;
+            flex: 1 1 200px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .tip-card strong {
+            color: #ecd669;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+
+        /* Цитата */
+        .quote-block {
+            background: linear-gradient(135deg, #1e3a32, #0f2c25);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+            font-style: italic;
+            border: 1px solid #d4af37;
+        }
+
+        .quote-text {
+            font-size: 1.2rem;
+            color: #f5e7a7;
+        }
+
+        /* footer */
+        .footer-note {
+            margin-top: 2.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            font-size: 0.8rem;
+            text-align: center;
+            color: #9ec7bb;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 1.2rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>💰 Деньги</h1>
+        <div class="subhead">Всеобщий эквивалент стоимости товаров и услуг, обладающий максимальной ликвидностью</div>
+    </div>
+
+    <!-- Введение -->
+    <p><strong>Деньги</strong> — это не просто бумажки или монеты. Это важнейший инструмент экономики, который используется как <strong>средство обмена, платежа и накопления</strong>. Они прошли путь от товарных (скот, металлы) до бумажных, электронных и цифровых форм. Деньги позволяют оценивать и приобретать блага, делая товарный обмен удобным и эффективным.</p>
+
+    <!-- Функции денег -->
+    <h2>📋 Ключевые функции денег</h2>
+    <div class="functions-grid">
+        <div class="func-card">
+            <div class="func-icon">⚖️</div>
+            <h4>Мера стоимости</h4>
+            <p>Оценка цены товаров и услуг. Деньги делают все товары соизмеримыми.</p>
+        </div>
+        <div class="func-card">
+            <div class="func-icon">🔄</div>
+            <h4>Средство обращения</h4>
+            <p>Посредник в обмене: Товар → Деньги → Товар. Упрощает куплю-продажу.</p>
+        </div>
+        <div class="func-card">
+            <div class="func-icon">💳</div>
+            <h4>Средство платежа</h4>
+            <p>Выплата долгов, налогов, зарплат, кредитов. Позволяет платить с отсрочкой.</p>
+        </div>
+        <div class="func-card">
+            <div class="func-icon">🏦</div>
+            <h4>Средство накопления</h4>
+            <p>Формирование богатства, сбережения. Деньги сохраняют покупательную способность.</p>
+        </div>
+    </div>
+
+    <!-- Виды денег -->
+    <h2>🏷️ Виды денег</h2>
+    <table class="money-table">
+        <tr>
+            <td>💰 Товарные деньги</td>
+            <td>Имеют собственную стоимость (скот, золото, серебро, меха). Использовались на ранних этапах развития экономики.</td>
+        </tr>
+        <tr>
+            <td>💵 Символические / Бумажные</td>
+            <td>Банкноты и монеты, ценность которых гарантирована государством. Сами по себе почти ничего не стоят.</td>
+        </tr>
+        <tr>
+            <td>💻 Безналичные деньги</td>
+            <td>Записи по счетам в банках. Наиболее распространённая форма в современной экономике.</td>
+        </tr>
+        <tr>
+            <td>📱 Цифровые / Электронные</td>
+            <td>Валюты центральных банков (CBDC) и криптовалюты (биткоин). Новая форма денег.</td>
+        </tr>
+    </table>
+
+    <!-- Денежная система и политика -->
+    <h2>🏛️ Денежная система и политика</h2>
+    <div class="policy-block">
+        <p>📊 <strong>Регулирование количества денег в обращении</strong> — одна из главных задач государства и центральных банков. Контроль над денежной массой позволяет управлять инфляцией (обесцениванием денег) и бороться с дефляцией.</p>
+        <p>🔹 <strong>Инфляция</strong> — рост цен, снижение покупательной способности денег.<br>
+        🔹 <strong>Дефляция</strong> — падение цен, что тоже опасно для экономики.</p>
+        <p>Центробанки используют ключевую ставку, нормы резервирования и операции на открытом рынке, чтобы поддерживать стабильность национальной валюты.</p>
+    </div>
+
+    <!-- Финансовая грамотность -->
+    <h2>🧠 Финансовая грамотность</h2>
+    <p>Управление личными деньгами — это навык, который позволяет достигать финансовой независимости. Основные принципы:</p>
+    <div class="tips-grid">
+        <div class="tip-card">
+            <strong>📝 Планирование бюджета</strong>
+            Учитывайте доходы и расходы, чтобы видеть реальную картину.
+        </div>
+        <div class="tip-card">
+            <strong>💰 Накопление</strong>
+            Откладывайте минимум 10–20% дохода на «подушку безопасности».
+        </div>
+        <div class="tip-card">
+            <strong>📈 Инвестирование</strong>
+            Деньги должны работать: вклады, акции, облигации, недвижимость.
+        </div>
+        <div class="tip-card">
+            <strong>🏦 Кредитование</strong>
+            Берите кредиты осознанно, оценивая переплату и свою платёжеспособность.
+        </div>
+        <div class="tip-card">
+            <strong>📚 Финансовые цели</strong>
+            Ставьте SMART-цели: конкретные, измеримые, достижимые.
+        </div>
+    </div>
+
+    <!-- Цитата -->
+    <div class="quote-block">
+        <div class="quote-text">«Деньги — это лишь инструмент. Они помогут вам достичь любых целей, но не заменят сами цели.»</div>
+        <div style="margin-top: 0.7rem; font-size: 0.9rem;">— Из книг по финансовой грамотности</div>
+    </div>
+
+    <!-- Дополнительно: функции денег кратко -->
+    <h2>🔑 Основные аспекты темы денег</h2>
+    <p>Деньги являются <strong>основой современного товарного обмена</strong>, позволяя оценивать и приобретать блага. Без денег экономика вернулась бы к бартеру — неудобному и неэффективному обмену товарами. Благодаря деньгам мы можем планировать бюджет, копить, инвестировать и совершать покупки в любой точке мира.</p>
+
+    <div class="policy-block" style="background: rgba(0,0,0,0.3);">
+        <p style="margin-bottom: 0;">💡 <strong>Краткий итог:</strong> Деньги выполняют 4 главные функции: мера стоимости, средство обращения, средство платежа, средство накопления. По форме они бывают товарные, бумажные, безналичные и цифровые. Управляя личными финансами, можно добиться стабильности и приумножить капитал.</p>
+    </div>
+
+    <div class="footer-note">
+        📚 Информация подготовлена на основе экономических источников и принципов финансовой грамотности.
+    </div>
+</div>
+</body>
+</html>
